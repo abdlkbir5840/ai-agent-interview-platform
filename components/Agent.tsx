@@ -87,6 +87,7 @@ if(success && id){
   const handleCall = async () => {
     setCallStatus(CallStatus.CONNECTING)
     if(type === 'generate'){
+      console.log("Workflow ID:", process.env.NEXT_PUBLIC_VAPI_WORFLOW_ID);
       await vapi.start(process.env.NEXT_PUBLIC_VAPI_WORFLOW_ID!, {
         variableValues: {
           username: userName,
