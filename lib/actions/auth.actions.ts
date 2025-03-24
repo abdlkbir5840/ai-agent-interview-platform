@@ -79,7 +79,7 @@ export async function getCurrentUser(): Promise<User | null> {
       .collection("users")
       .doc(decodedClaims.uid)
       .get();
-      if (!userRecord.exists) {
+    if (!userRecord.exists) {
       return null;
     }
     return {
@@ -91,8 +91,7 @@ export async function getCurrentUser(): Promise<User | null> {
     return null;
   }
 }
-
-export async function isAuthenticated(){
+export async function isAuthenticated() {
   const user = await getCurrentUser();
   return !!user;
 }
